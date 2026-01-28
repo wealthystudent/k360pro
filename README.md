@@ -1,5 +1,103 @@
 # Kinesis Advantage 360 Pro ZMK Config
 
+## Table of Contents
+1. [Fork Workflow](#fork-workflow)
+2. [Modifying the keymap](#modifying-the-keymap)
+3. [Building the Firmware with GitHub Actions](#building-the-firmware-with-github-actions)
+4. [Building the Firmware in a local container](#building-the-firmware-in-a-local-container)
+5. [Flashing firmware](#flashing-firmware)
+6. [Versioning](#versioning)
+7. [N-Key Rollover](#n-key-rollover)
+8. [Battery reporting](#battery-reporting)
+9. [Modifier indicator color](#modifier-indicator-color)
+10. [Layer colors](#layer-colors)
+11. [Changelog](#changelog)
+12. [Beta testing](#beta-testing)
+13. [Note](#note)
+14. [Other support](#other-support)
+
+## Fork Workflow
+
+This repository is a personal fork of the official Kinesis Advantage 360 Pro ZMK configuration. To maintain a clean history and stay up-to-date with official firmware updates, follow the workflow below.
+
+### Repository Structure
+
+The following diagram illustrates the relationship between the upstream Kinesis repository, your origin fork, and the local branches.
+
+```
+upstream (KinesisCorporation/Adv360-Pro-ZMK)
+    │
+    │  V3.0 branch (Official Updates)
+    │
+    ▼
+origin/V3.0 ──────────────────────────────────►  (Pristine mirror of upstream)
+    │
+    │  branched
+    │
+    ▼
+origin/feature/custom-layout ─────────────────►  (Your customizations)
+```
+
+### Initial Setup
+
+The `upstream` remote should be configured to point to the official Kinesis repository. This has already been set up in this environment:
+
+```shell
+git remote add upstream https://github.com/KinesisCorporation/Adv360-Pro-ZMK.git
+```
+
+### Syncing with Upstream
+
+To keep your local `V3.0` branch in sync with official updates, use the following commands. We use `--ff-only` to ensure your local mirror stays pristine without merge commits.
+
+```shell
+# Fetch latest changes from Kinesis
+git fetch upstream
+
+# Update local V3.0 branch
+git checkout V3.0
+git merge upstream/V3.0 --ff-only
+
+# Update your GitHub fork
+git push origin V3.0
+```
+
+### Rebasing Customizations
+
+When official updates are released, you should rebase your customization branch onto the updated `V3.0` branch. This keeps your custom commits at the tip of the history.
+
+```shell
+git checkout feature/custom-layout
+git rebase V3.0
+
+# If there are conflicts, see "Handling Merge Conflicts" below.
+# Once resolved:
+git push origin feature/custom-layout --force-with-lease
+```
+
+### Handling Merge Conflicts
+
+Conflicts often occur in `config/adv360.keymap` or `config/keymap.json` when upstream changes the default layout or formatting.
+
+| Scenario | Recommendation |
+| :--- | :--- |
+| **New behaviors added upstream** | Keep both (add new behaviors to your layout) |
+| **Default keymap changed** | Keep yours (prefer your custom mappings) |
+| **Config structure changed** | Adopt new structure (migrate your keys to new format) |
+| **west.yml ZMK version bumped** | Keep upstream's (ensures compatibility with firmware) |
+
+For detailed manual resolution steps, especially for V2.0 to V3.0 migrations, refer to [UPGRADE.md](UPGRADE.md).
+
+### Quick Reference
+
+| Action | Command Block |
+| :--- | :--- |
+| **Update All** | `git fetch upstream && git checkout V3.0 && git merge upstream/V3.0 --ff-only && git push origin V3.0` |
+| **Apply to Custom** | `git checkout feature/custom-layout && git rebase V3.0` |
+| **Force Push** | `git push origin feature/custom-layout --force-with-lease` |
+
+---
+
 ## Modifying the keymap
 
 [The ZMK documentation](https://zmk.dev/docs) covers both basic and advanced functionality and has a table of OS compatibility for keycodes. Please note that the RGB Underglow, Backlight and Power Management sections are not relevant to the Advantage 360 Pro's custom ZMK fork. For more information see [this note](#note)
@@ -155,4 +253,3 @@ Further support resources can be found on Kinesis.com:
 
 In the event of a hardware issue it may be necessary to open a support ticket directly with Kinesis as opposed to a GitHub issue in this repository.
 * https://kinesis-ergo.com/support/kb360pro/#ticket
-
