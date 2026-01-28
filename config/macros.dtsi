@@ -245,7 +245,7 @@
     compatible = "zmk,behavior-macro";
     label = "NO_LBRC";
     #binding-cells = <0>;
-    bindings = <&kp RA(N7)>;
+    bindings = <&kp RA(N0)>;
   };
 
   // } = Option+0
