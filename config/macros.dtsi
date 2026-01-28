@@ -253,7 +253,7 @@
     compatible = "zmk,behavior-macro";
     label = "NO_RBRC";
     #binding-cells = <0>;
-    bindings = <&kp RA(N0)>;
+    bindings = <&kp RA(N8)>;
   };
 
   // | = Grave key on Norwegian
@@ -261,9 +261,10 @@
     compatible = "zmk,behavior-macro";
     label = "NO_PIPE";
     #binding-cells = <0>;
-    bindings = <&kp GRAVE>;
+    bindings = <&kp RA(N7)>;
   };
 
+  
   // \ = Option+Shift+7
   no_bsls: no_bsls {
     compatible = "zmk,behavior-macro";
