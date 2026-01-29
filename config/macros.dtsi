@@ -264,7 +264,6 @@
     bindings = <&kp RA(N7)>;
   };
 
-  
   // \ = Option+Shift+7
   no_bsls: no_bsls {
     compatible = "zmk,behavior-macro";
@@ -278,7 +277,7 @@
     compatible = "zmk,behavior-macro";
     label = "NO_TILDE";
     #binding-cells = <0>;
-    bindings = <&kp LS(GRAVE)>;
+    bindings = <&kp RA(RBKT)>;
   };
 
   // @ = Option+' (apostrophe) on Norwegian macOS, or just RA(N2) might work
@@ -286,7 +285,7 @@
     compatible = "zmk,behavior-macro";
     label = "NO_AT";
     #binding-cells = <0>;
-    bindings = <&kp RA(N2)>;
+    bindings = <&kp RA(NUBS)>;
   };
 
   // $ = Option+4
