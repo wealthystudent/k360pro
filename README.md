@@ -2,6 +2,22 @@
 
 Personal fork for custom keymaps on the Kinesis Advantage 360 Pro.
 
+## Shortcuts
+- Mod + Space — toggle all indicator LEDs on/off (saves battery).
+- Mod + ↑ / Mod + ↓ — increase / decrease backlight brightness level.
+- Mod + Enter — toggle backlighting on/off.
+- Mod + 1 / 2 / 3 / 4 / 5 — switch Bluetooth profile 1–5 (Profile 5 = LED off / best battery for wired use).
+- Mod + Hotkey 4 (hold) — show current battery level on the indicator LEDs (per module).
+- Mod + Right Windows — clear the active Bluetooth pairing for the current profile (then “Forget” it on the computer to re-pair).
+- Mod + Hotkey 1 — put the left module into bootloader mode (USB must be connected).
+- Mod + Hotkey 3 — put the right module into bootloader mode (USB must be connected).
+- Bootloader button (double-click with paperclip) — mount that module’s virtual USB drive to flash firmware/reset .uf2.
+- Bootloader button (single-click) — exit bootloader mode (keyboard returns to normal).
+- Hold Fn key + number-row key — momentarily access Fn layer actions (e.g., hold Fn then tap = to send F1).
+- Tap Kp key — toggle into/out of Keypad (Kp) layer for the 10‑key cluster on the right side.
+- Mod + Esc — unlock the keyboard for programming in Clique (required before making changes).
+
+
 ## Workflow
 
 ### Repository Structure
