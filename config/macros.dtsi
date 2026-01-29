@@ -293,5 +293,5 @@
     compatible = "zmk,behavior-macro";
     label = "NO_DLLR";
     #binding-cells = <0>;
-    bindings = <&kp RA(N4)>;
+    bindings = <&kp LS(N4)>;
   };
