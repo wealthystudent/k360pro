@@ -58,9 +58,9 @@
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4           &kp N5 &tog 1                                                                    &mo 3     &kp N6 &kp N7          &kp N8          &kp N9          &kp N0             &kp MINUS
         &kp TAB   &kp Q     &kp W    &kp E    &kp R            &kp T  &kp HOME                                                                  &kp PG_UP &kp Y  &kp U           &kp I           &kp O           &kp P              &kp LBKT
-        &kp ESC   &hml LALT A &hml LCTRL S &hml LSHFT D &hml LGUI F &kp G  &kp END    &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL                     &kp PG_DN &kp H  &hmr RGUI J     &hmr RSHFT K    &hmr RCTRL L    &hmr RALT SEMI     &kp SQT
+        &kp ESC   &hml LALT A &hml LCTRL S &hml LSHFT D &hml LGUI F &kp G  &kp END    &kp SPACE &kp LALT &kp LGUI  &kp RCTRL                     &kp PG_DN &kp H  &hmr RGUI J     &hmr RSHFT K    &hmr RCTRL L    &hmr RALT SEMI     &kp SQT
         &sl 2     &kp Z     &kp X    &kp C    &kp V            &kp B                            &kp LALT &kp LGUI                                         &kp N  &kp M           &kp COMMA       &kp DOT         &kp FSLH           &sl 2
-        &kp LALT  &kp GRAVE &kp TAB  &none    &sl 4                          &kp BSPC &sl 2     &sl 5    &sl 2     &kp ENTER &kp SPACE                           &sl 2          &kp TAB         &kp LBKT        &kp RBKT           &sl 5
+        &kp LALT  &kp GRAVE &kp TAB  &kp SPACE    &sl 4                          &kp BSPC &sl 2     &sl 5    &sl 2     &kp ENTER &kp SPACE                           &sl 2          &kp TAB         &kp LBKT        &kp RBKT           &sl 5
       >;
     };
     keypad {
@@ -109,7 +109,7 @@
       bindings = <
         &trans    &trans    &trans   &trans   &trans       &trans &trans                                                                    &trans    &trans     &trans     &trans     &trans       &trans          &trans
         &trans    &trans    &trans   &trans   &trans       &trans &kp HOME                                                                  &trans    &trans     &trans     &trans     &trans       &trans          &trans
-        &kp TAB   &hml LALT A &hml LCTRL S &hml LSHFT D &sl 2 &trans &none  &kp LGUI  &kp LCTRL &kp RCTRL &kp LGUI                           &kp END   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT    &trans          &trans
+        &kp TAB   &hml LALT A &hml LCTRL S &hml LSHFT D &hml LGUI F &trans &none  &kp LGUI  &kp LCTRL &kp RCTRL &kp LGUI                           &kp END   &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT    &trans          &trans
         &to 0     &trans    &trans   &trans   &trans       &trans                    &kp LSHFT &kp LSHFT                                              &trans     &kp PG_DN  &kp PG_UP  &trans       &trans          &to 0
         &trans    &trans    &trans   &trans   &trans                      &trans    &trans    &trans    &kp LALT  &trans    &trans                              &trans     &trans     &trans       &trans          &trans
       >;
